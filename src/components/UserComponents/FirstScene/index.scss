@@ -1,0 +1,157 @@
+#firstScene {
+  width: 100%;
+  height: 100dvh;
+  background: #0D0D0D;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 8px;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 992px) {
+    height: max-content;
+    padding-bottom: 30px;
+  }
+
+  .sariImage {
+    position: absolute;
+    max-width: 1600px;
+    overflow-x: hidden;
+    top: -830px;
+    height: max-content;
+
+    @media screen and (max-width: 1399px) and (min-width: 1300px) {
+      top: -630px;
+    }
+
+    @media screen and (max-width: 1299px) and (min-width: 1200px) {
+      top: -630px;
+    }
+
+    @media screen and (max-width: 1199px) and (min-width: 1100px) {
+      top: -430px;
+    }
+
+    @media screen and (max-width: 1099px) and (min-width: 1000px) {
+      top: -430px;
+    }
+
+    @media screen and (max-width: 999px) and (min-width: 900px) {
+      top: -430px;
+    }
+
+    @media screen and (max-width: 899px) and (min-width: 800px) {
+      top: -330px;
+    }
+
+    @media screen and (max-width: 799px) and (min-width: 700px) {
+      top: -330px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 699px) and (min-width: 600px) {
+      top: -330px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 599px) and (min-width: 500px) {
+      top: -230px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 499px) and (min-width: 400px) {
+      top: -200px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 399px) and (min-width: 300px) {
+      top: -200px;
+      scale: 1.5;
+    }
+
+
+    .sari {
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .logo {
+    width: 200px;
+    position: relative;
+    z-index: 9999;
+
+    @media screen and (max-width: 992px) {
+      width: 130px;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    z-index: 9999;
+
+    @media screen and (max-width: 992px) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: #E8E8E8;
+    position: relative;
+    z-index: 9999;
+
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+    }
+  }
+
+  .firstSceneImage {
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+  }
+
+  button {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 48px;
+    border-radius: 16px;
+    background: #FFFF0B;
+    position: relative;
+    z-index: 9999;
+    border: none;
+    box-shadow: rgba(244, 255, 121, 0.75) 0 0 30px;
+    margin-top: -20px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+      margin-top: 10px;
+      height: 40px;
+      padding: 0 36px;
+    }
+  }
+}
