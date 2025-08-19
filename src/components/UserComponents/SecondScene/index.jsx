@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import './index.scss';
-import image1 from "/public/assets/sari1.png";
-import image2 from "/public/assets/wp1.png";
-import image3 from "/public/assets/wp2.png";
-import image4 from "/public/assets/wp3.png";
-import image5 from "/public/assets/wp4.png";
-import image6 from "/public/assets/wp5.png";
+import image1 from "/src/assets/sari1.png";
+import image2 from "/src/assets/wp1.png";
+import image3 from "/src/assets/wp2.png";
+import image4 from "/src/assets/wp3.png";
+import image5 from "/src/assets/wp4.png";
+import image6 from "/src/assets/wp5.png";
 
 function SecondScene() {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 992);

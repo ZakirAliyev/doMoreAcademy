@@ -1,7 +1,7 @@
 import './index.scss'
-import image1 from "/public/assets/sari.png"
-import image2 from "/public/assets/logo.png"
-import image3 from "/public/assets/firstSceneImage.png"
+import image1 from "/src/assets/sari.png"
+import image2 from "/src/assets/logo.png"
+import image3 from "/src/assets/firstSceneImage.png"
 
 
 function FirstScene() {

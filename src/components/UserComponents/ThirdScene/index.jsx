@@ -1,7 +1,7 @@
 import './index.scss'
-import image1 from "/public/assets/sari1.png"
-import image2 from "/public/assets/logo.png"
-import image4 from "/public/assets/ring.png"
+import image1 from "/src/assets/sari1.png"
+import image2 from "/src/assets/logo.png"
+import image4 from "/src/assets/ring.png"
 
 
 function ThirdScene() {

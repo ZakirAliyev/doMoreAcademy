@@ -1,0 +1,417 @@
+#payment {
+  width: 100%;
+  min-height: 100dvh;
+  height: max-content;
+  background: #0D0D0D;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 992px) {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: max-content;
+  }
+
+  button {
+    background: #F4FF79;
+    border: 1px solid #626262AD;
+    box-shadow: 0 4px 4px 0 #00000040;
+    height: 60px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    border-radius: 13px;
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .box {
+    border: 1px solid #474747;
+    background: #111111;
+    padding: 32px 0 16px;
+    border-radius: 11px;
+    position: relative;
+    z-index: 9999;
+
+    .top {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      background: #272727;
+      color: #DFDFDF;
+      padding: 16px 0 16px 32px;
+      margin-bottom: 20px;
+
+      span {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 100%;
+        width: 350px;
+      }
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background: #F5FF89;
+      }
+    }
+
+    .inputWrapper {
+      padding: 0 32px;
+      margin-top: 10px;
+
+      @media screen and (max-width: 992px) {
+        padding: 0 24px;
+      }
+
+      label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: #C0C0C0;
+      }
+
+      input {
+        background: #171717;
+        width: 100%;
+        height: 45px;
+        padding: 0 16px;
+        border-radius: 8px;
+        border: 1px solid #3C3C3C;
+        margin-top: 5px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #DFDFDF;
+        outline: none;
+      }
+    }
+
+    .inputWrapper1 {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 16px 32px 0 32px;
+      gap: 16px;
+
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        width: 18px;
+        height: 18px;
+        border: 2px solid #888;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: #555;
+        }
+
+        &:checked {
+          background-color: #F4FF79;
+          border-color: #f4ff6c;
+          color: black;
+          position: relative;
+        }
+
+        &:checked::after {
+          content: "";
+          position: absolute;
+          top: 1px;
+          left: 3px;
+          width: 4px;
+          height: 8px;
+          border: solid #000000;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+
+        &:disabled {
+          background-color: #e5e7eb;
+          border-color: #cbd5e1;
+          cursor: not-allowed;
+        }
+      }
+
+      span {
+        color: #C0C0C0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+
+    .line1 {
+      width: calc(100% - 64px);
+      height: 1px;
+      background: #4B4B4B;
+      margin: 32px 32px 16px 32px;
+    }
+
+    .box2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+
+      img {
+        width: 40px;
+      }
+
+      .yazi {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: #C0C0C0;
+      }
+    }
+
+    button {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F4FF79;
+      box-shadow: rgba(244, 255, 121, 0.75) 0 0 2px,
+      3px -3px 22.4px 2px #FFFF0B54,
+      inset 4px 4px 17.2px 2px #61616154;
+      border: none;
+      border-radius: 20px;
+      margin: 30px 32px 0;
+      width: calc(100% - 64px);
+      flex-direction: row;
+      gap: 16px;
+
+      @media screen and (max-width: 992px) {
+        box-shadow: rgba(244, 255, 121, 0.75) 0 0 5px,
+        3px -3px 21.4px 1px #FFFF0B54,
+        inset 4px 4px 17.2px 10px #61616154;
+        border-radius: 25px;
+
+        height: 60px;
+      }
+
+      .birinci {
+        font-weight: 500;
+        @media screen and (max-width: 992px) {
+          font-size: 16px;
+        }
+        line-height: 100%;
+        text-align: center;
+        color: #2D2D2D;
+        font-size: 16px;
+      }
+
+      .ikinci {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        text-align: center;
+        color: #6D6D6D;
+
+        @media screen and (max-width: 992px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .sariImage {
+    position: absolute;
+    max-width: 1600px;
+    overflow-x: hidden;
+    bottom: -830px;
+    rotate: 180deg;
+    height: max-content;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 1399px) and (min-width: 1300px) {
+      bottom: -630px;
+    }
+
+    @media screen and (max-width: 1299px) and (min-width: 1200px) {
+      bottom: -630px;
+    }
+
+    @media screen and (max-width: 1199px) and (min-width: 1100px) {
+      bottom: -430px;
+    }
+
+    @media screen and (max-width: 1099px) and (min-width: 1000px) {
+      bottom: -430px;
+    }
+
+    @media screen and (max-width: 999px) and (min-width: 900px) {
+      bottom: -430px;
+    }
+
+    @media screen and (max-width: 899px) and (min-width: 800px) {
+      bottom: -330px;
+    }
+
+    @media screen and (max-width: 799px) and (min-width: 700px) {
+      bottom: -330px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 699px) and (min-width: 600px) {
+      bottom: -330px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 599px) and (min-width: 500px) {
+      bottom: -230px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 499px) and (min-width: 400px) {
+      bottom: -200px;
+      scale: 1.5;
+    }
+
+    @media screen and (max-width: 399px) and (min-width: 300px) {
+      bottom: -200px;
+      scale: 1.5;
+    }
+
+    .sari {
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  /* ✅ 992px-dən kiçik ekranlarda font-ları proporsional kiçiltmə */
+  @media screen and (max-width: 992px) {
+    button {
+      font-size: calc(20px * 0.9);
+      height: 45px;
+    }
+
+    .box {
+      .top span {
+        font-size: calc(18px * 0.9);
+      }
+
+      .inputWrapper {
+        label {
+          font-size: calc(14px * 0.9);
+        }
+
+        input {
+          font-size: calc(14px * 0.9);
+        }
+      }
+
+      .inputWrapper1 {
+        span {
+          font-size: calc(14px * 0.9);
+        }
+      }
+
+      .box2 .yazi {
+        font-size: calc(14px * 0.9);
+
+        max-width: 120px;
+        width: 100%;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      button {
+        height: 40px;
+
+        .birinci {
+          font-size: calc(16px * 0.9);
+        }
+
+        .ikinci {
+          font-size: calc(14px * 0.9);
+        }
+      }
+    }
+  }
+
+  .textWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+
+    .text {
+      color: #E0E0E0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .text1 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 100%;
+      text-decoration: line-through;
+      color: #828282;
+    }
+
+    .text2 {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+      color: #C0C0C0;
+    }
+
+    .text3 {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #D2D2D2;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 9999;
+
+    .text {
+      font-weight: 400;
+      line-height:1.5;
+      text-align: center;
+      color: #E6E6E6;
+      margin: 32px 0;
+
+      @media screen and (max-width: 992px) {
+        font-size: 14px;
+        padding: 0 16px;
+      }
+    }
+    img {
+      width: 150px;
+      margin-bottom: 32px;
+
+      @media screen and (max-width: 992px) {
+        width: 100px;
+      }
+    }
+  }
+}
