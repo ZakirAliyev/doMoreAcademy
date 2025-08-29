@@ -5,6 +5,8 @@ import ErrorPage from "../pages/ErrorPage/index.jsx";
 import LoginPage from "../pages/AdminPages/LoginPage/index.jsx";
 import ForgotPassPage from "../pages/UserPages/ForgotPassPage/index.jsx";
 import ResetPassPage from "../pages/UserPages/ResetPassPage/index.jsx";
+import SuccessPage from "../pages/UserPages/SuccessPage/index.jsx";
+import FailedPage from "../pages/UserPages/FailedPage/index.jsx";
 
 export const ROUTES = [
     {
@@ -30,6 +32,14 @@ export const ROUTES = [
             {
                 path: '/login',
                 element: <LoginPage/>,
+            },
+            {
+                path: '/success',
+                element: <SuccessPage/>,
+            },
+            {
+                path: '/failed',
+                element: <FailedPage/>,
             },
             {
                 path: '*',

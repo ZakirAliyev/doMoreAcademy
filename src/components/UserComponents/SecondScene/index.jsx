@@ -6,6 +6,7 @@ import image3 from "/src/assets/wp2.png";
 import image4 from "/src/assets/wp3.png";
 import image5 from "/src/assets/wp4.png";
 import image6 from "/src/assets/wp5.png";
+import { Image } from "antd";
 
 function SecondScene() {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 992);
@@ -27,23 +28,23 @@ function SecondScene() {
             <div className={"asdasd"}>
                 <div className={"boxImageWrapper1"}>
                     <div className={"boxImage"}>
-                        <img src={image2} alt={"Image"} />
+                        <Image src={image2} alt={"Image"} />
                     </div>
                     <div className={"boxImage"}>
-                        <img src={image4} alt={"Image"} />
+                        <Image src={image4} alt={"Image"} />
                     </div>
                     {!isSmallScreen && (
                         <div className={"boxImage"}>
-                            <img src={image6} alt={"Image"} />
+                            <Image src={image6} alt={"Image"} />
                         </div>
                     )}
                 </div>
                 <div className={"boxImageWrapper2"}>
                     <div className={"boxImage"}>
-                        <img src={image3} alt={"Image"} />
+                        <Image src={image3} alt={"Image"} />
                     </div>
                     <div className={"boxImage"}>
-                        <img src={image5} alt={"Image"} />
+                        <Image src={image5} alt={"Image"} />
                     </div>
                 </div>
             </div>

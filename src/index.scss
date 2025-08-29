@@ -1,59 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Poppins', sans-serif;
-    word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.2s ease, color 0.2s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 button, a, .link {
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @mixin generate-cols($prefix: '', $breakpoint: null) {
-    @for $i from 1 through 12 {
-        $width: calc(100% / 12 * $i);
-        .#{$prefix}#{$i} {
-            width: #{$width};
-            padding: 16px;
-        }
+  @for $i from 1 through 12 {
+    $width: calc(100% / 12 * $i);
+    .#{$prefix}#{$i} {
+      width: #{$width};
+      padding: 16px;
     }
+  }
 }
 
 @include generate-cols('col-');
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
-    @include generate-cols('col-md-');
+  @include generate-cols('col-md-');
 }
 
 @media screen and (max-width: 768px) and (min-width: 576px) {
-    @include generate-cols('col-sm-');
+  @include generate-cols('col-sm-');
 }
 
 @media screen and (max-width: 576px) {
-    @include generate-cols('col-xs-');
+  @include generate-cols('col-xs-');
+}
+
+.ant-image-preview-img-wrapper {
+  z-index: 9999 !important;
+}
+
+.ant-modal-title {
+  font-size: 22px !important;
+  color: white !important;
+  font-weight: 500 !important;
+  margin-top: 10px !important;
+  text-align: center !important;
+
+  @media screen and (max-width: 992px) {
+    font-size: 18px !important;
+  }
+}
+
+.ant-modal-close-x {
+  color: white !important;
+}
+
+/* Modal body üçün ümumi stil */
+.ant-modal .ant-modal-body {
+  max-height: 70dvh; /* maksimum hündürlük */
+  overflow-y: auto; /* scroll aktiv olsun */
+  padding-right: 12px; /* sağda scroll bar textə yapışmasın deyə boşluq */
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===== Scrollbar Styling (Chrome, Edge, Safari) ===== */
+.ant-modal .ant-modal-body::-webkit-scrollbar {
+  width: 8px; /* scrollbar enliyi */
+}
+
+.ant-modal .ant-modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); /* track (scroll-un arxa fonu) */
+  border-radius: 10px;
+}
+
+.ant-modal .ant-modal-body::-webkit-scrollbar-thumb {
+  background: #555; /* scroll-un özü */
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.ant-modal .ant-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #888; /* hover zamanı rəngi */
+}
+
+/* ===== Firefox üçün ===== */
+.ant-modal .ant-modal-body {
+  scrollbar-width: thin; /* nazik scrollbar */
+  scrollbar-color: #555 transparent; /* scrollbar və track rəngi */
 }

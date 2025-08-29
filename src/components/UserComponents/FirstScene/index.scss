@@ -9,9 +9,14 @@
   padding: 0 8px;
   overflow-x: hidden;
 
+
+  .iconVideo {
+    font-size: 30px;
+  }
+
   @media screen and (max-width: 992px) {
     height: max-content;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
   }
 
   .sariImage {
@@ -89,7 +94,7 @@
     }
   }
 
-  h2 {
+  p {
     font-weight: 700;
     font-size: 48px;
     line-height: 1.5;
@@ -107,12 +112,11 @@
     }
   }
 
-  p {
+  .peyser {
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
     text-align: center;
-    margin-top: 20px;
     color: #E8E8E8;
     position: relative;
     z-index: 9999;
@@ -145,13 +149,103 @@
     z-index: 9999;
     border: none;
     box-shadow: rgba(244, 255, 121, 0.75) 0 0 30px;
-    margin-top: -20px;
+    margin-top: 20px;
 
     @media screen and (max-width: 992px) {
       font-size: 14px;
-      margin-top: 10px;
+      margin-top: 40px;
       height: 40px;
       padding: 0 36px;
     }
+  }
+
+  .firstSceneVideo {
+    max-width: 900px;
+    width: 95%;
+    border-radius: 16px;
+    position: relative;
+    z-index: 100;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    box-shadow: 1px 1px 58px 13px #FFFF002B;
+    border: 1px solid #FAFFC0;
+    margin-top: 10px;
+
+    @media screen and (max-width: 992px) {
+      margin-top: 20px;
+    }
+  }
+
+  .video-container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .firstSceneVideo {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .custom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 0 0 16px 16px;
+    position: absolute;
+    bottom: 0;
+    width: 99.79%;
+    margin-left: 1px;
+    height: 120px;
+    z-index: 999;
+    margin-bottom: 8px;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(.9px);
+
+    @media screen and (max-width: 992px) {
+      width: 99.35%;
+    }
+  }
+
+  .custom-controls button {
+    background: #FFFF0B;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    box-shadow: rgba(244, 255, 121, 0.75) 0 0 4px;
+  }
+
+  .zakir {
+    right: 16px;
+  }
+
+  .zakir1 {
+    right: 70px;
+
+    .iconVideo {
+      padding: 2px;
+    }
+  }
+
+  .zakir2 {
+    left: 16px;
+  }
+
+  .custom-controls input[type="range"] {
+    flex: 1;
+    margin: 0 12px;
   }
 }
