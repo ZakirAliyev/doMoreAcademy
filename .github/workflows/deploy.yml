@@ -3,7 +3,7 @@ name: Auto Deploy React App to Plesk via FTP
 on:
   push:
     branches:
-      - main
+      - main  # Eğer başka branch kullanıyorsan değiştir
 
 jobs:
   deploy:
@@ -16,10 +16,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install --force --registry=https://registry.npmjs.org/
+        run: npm install --force
 
       - name: Build React project
         run: npm run build
@@ -35,9 +35,9 @@ jobs:
         with:
           server: ftp.domoreaze.com          # burda açıq saxlanır
           username: domoreaz                 # burda açıq saxlanır
-          password: ${{ secrets.FTP_PASSWORD }} # YALNIZ şifrə secret-də
+          password: ${{ secrets.FTP_PASSWORD }} #
           local-dir: dist/
           server-dir: httpdocs/
 
-      - name: Cleanup build artifacts
+      - name: Cleanup old files (optional)
         run: rm -rf dist
