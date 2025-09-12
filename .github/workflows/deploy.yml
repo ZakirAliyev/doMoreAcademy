@@ -1,23 +1,35 @@
-name: 🚀 Auto Deploy to FTP
+name: 🚀 React App Auto Deploy to FTP
 
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
-  ftp-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 📂 Sync files via FTP
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Build project
+        run: npm run build
+
+      - name: 📂 Deploy build folder via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.domoreaze.com
           username: domoreaz
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
+          local-dir: build/      
           server-dir: public_html/
