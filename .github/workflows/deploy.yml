@@ -3,7 +3,7 @@ name: Auto Deploy React App to Plesk via FTP
 on:
   push:
     branches:
-      - main  # Eğer başka branch kullanıyorsan değiştir
+      - main
 
 jobs:
   deploy:
@@ -16,10 +16,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
+
+      - name: Clean npm cache
+        run: npm cache clean --force
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
 
       - name: Build React project
         run: npm run build
@@ -27,17 +30,17 @@ jobs:
       - name: Check if dist directory exists
         run: |
           if [ ! -d "dist" ]; then
-            echo "Dist directory not found!"; exit 1;
+            echo "❌ Dist directory not found!"; exit 1;
           fi
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.domoreaze.com          # burda açıq saxlanır
-          username: domoreaz                 # burda açıq saxlanır
-          password: ${{ secrets.FTP_PASSWORD }} #
+          server: ftp.domoreaze.com
+          username: domoreaz
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
           server-dir: httpdocs/
 
-      - name: Cleanup old files (optional)
+      - name: Cleanup build artifacts
         run: rm -rf dist
