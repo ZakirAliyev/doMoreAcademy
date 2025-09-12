@@ -13,19 +13,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node.js (v20)
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Clean npm cache
         run: npm cache clean --force
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
 
       - name: Build project
-        run: npm run build 
+        run: npm run build  
 
       - name: 📂 Deploy dist folder via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -34,5 +34,5 @@ jobs:
           username: domoreaz
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: dist/      
+          local-dir: dist/
           server-dir: public_html/
