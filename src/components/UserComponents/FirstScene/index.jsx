@@ -19,7 +19,7 @@ function FirstScene() {
                 <iframe
                     ref={videoRef}
                     className="firstSceneVideo"
-                    src="https://www.youtube.com/embed/-eiCid_17xU?si=8U4XTyiYMe4apCni"
+                    src="https://www.youtube.com/embed/1YLgU9dFYlg?si=NO5HMnuGCSkOUMDG"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
