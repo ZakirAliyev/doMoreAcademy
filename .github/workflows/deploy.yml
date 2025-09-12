@@ -1,4 +1,4 @@
-name: 🚀 React (Vite) App Auto Deploy to FTP
+name: Auto Deploy React App to Plesk via FTP
 
 on:
   push:
@@ -6,33 +6,38 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js (v20)
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Install dependencies
-        run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
+        run: npm install --force --registry=https://registry.npmjs.org/
 
-      - name: Build project
-        run: npm run build  
+      - name: Build React project
+        run: npm run build
 
-      - name: 📂 Deploy dist folder via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Check if dist directory exists
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Dist directory not found!"; exit 1;
+          fi
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.domoreaze.com
-          username: domoreaz
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
+          server: ftp.domoreaze.com          # burda açıq saxlanır
+          username: domoreaz                 # burda açıq saxlanır
+          password: ${{ secrets.FTP_PASSWORD }} # YALNIZ şifrə secret-də
           local-dir: dist/
-          server-dir: public_html/
+          server-dir: httpdocs/
+
+      - name: Cleanup build artifacts
+        run: rm -rf dist
